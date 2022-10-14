@@ -1,6 +1,8 @@
-# <h1>Users#index</h1>
-# <p>Find me in app/views/users/index.html.erb</p>
 <h3>ユーザー情報一覧</h3>
+
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
 
 <table>
   <thead>
@@ -12,6 +14,7 @@
       <th>一言紹介</th>
       <th>更新日</th>
       <th>作成日</th>
+      <th>参照</th>C
     </tr>
   </thead>
 
@@ -23,8 +26,9 @@
         <td><%= user.email %></td>
         <td><%= user.age %></td>
         <td><%= user.introduction %></td>
-        <td><%= user.updated_at %></td>
-        <td><%= user.created_at %></td>
+        <td><%= user.updated_at.to_s(:datetime_jp) %></td>
+        <td><%= user.created_at.to_s(:datetime_jp) %></td>
+        <td><%= link_to "参照", user %></td>
       </tr>
     <% end %>
   </tbody>
