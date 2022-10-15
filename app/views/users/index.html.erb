@@ -33,7 +33,6 @@
         <td><%= link_to "参照", user %></td>
         <td><%= link_to "編集", [:edit, user] %></td>
         <td><%= link_to "削除", user, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
-
       </tr>
     <% end %>
   </tbody>
@@ -48,6 +47,9 @@
       <th>更新日時</th>
       <th>投稿日時</th>
       <th>投稿者(User_id)</th>
+      <th>参照</th>
+      <th>編集</th>
+      <th>削除</th>
     </tr>
   </thead>
 
@@ -58,6 +60,9 @@
         <td><%= post.updated_at.to_s(:datetime_jp) %></td>
         <td><%= post.created_at.to_s(:datetime_jp) %></td>
         <td><%= post.user_id %></td>
+        <td><%= link_to "参照", post %></td>
+        <td><%= link_to "編集", [:edit, post] %></td>
+        <td><%= link_to "削除", post, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
       </tr>
     <% end %>
   </tbody>
